@@ -4,15 +4,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f9f2d7, #dfefff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1, h3 {
+      color: #1b1b1b;
     }
 
     .flip-box {
       background-color: transparent;
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
       border: 1px solid #f1f1f1;
       perspective: 1000px;
+      margin: 0 auto;
     }
 
     .flip-box-inner {
@@ -34,36 +50,61 @@
       height: 100%;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
     }
 
     .flip-box-front {
-      background-color: #bbb;
+      background-color: #ddd;
       color: black;
     }
 
+    .flip-box-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .flip-box-back {
-      background-color: #2980b9;
+      background: linear-gradient(135deg, #2d6cdf, #173d74);
       color: white;
       transform: rotateY(180deg);
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .flip-box-back h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .flip-box-back p {
+      margin: 8px 0;
+      font-size: 14px;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
 
-  <h1>Image Flip with Text</h1>
-  <h3>Hover over the image below:</h3>
+  <div class="container">
+    <h1>Image Flip with Text</h1>
+    <h3>Hover over the image below:</h3>
 
-  <div class="flip-box">
-    <div class="flip-box-inner">
-      <div class="flip-box-front">
-        <img src="AlbertEinstein.jpg" alt="Sir Albert Einstein" style="width:300px;height:300px">
-      </div>
-      <div class="flip-box-back">
-        <h1>Albert Einstein</h1>
-        <p>Date of death: April 18, 1955</p>
-        <p>Anagram of ten elite brain</p>
-        <p>He turned down the presidency of Israel</p>
-        <p>Albert Einstein is justly famous for devising his theory of relativity, which revolutionised our understanding of space, time, gravity, and the universe.</p>
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Albert Einstein">
+        </div>
+        <div class="flip-box-back">
+          <h1>Albert Einstein</h1>
+          <p>Date of death: April 18, 1955</p>
+          <p>Anagram of "ten elite brain"</p>
+          <p>He turned down the presidency of Israel</p>
+          <p>Albert Einstein is famous for his theory of relativity, which changed our understanding of space, time, gravity, and the universe.</p>
+        </div>
       </div>
     </div>
   </div>
